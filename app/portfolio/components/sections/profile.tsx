@@ -6,9 +6,21 @@ import { useFadeIn } from "../../hooks/useFadeIn";
 import GlassCard from "../ui/GlassCard";
 import GridMatrixBg from "../ui/GridMatrixBg";
 import {
-  primaryBtn, secondaryBtn, gradientText,
-  synKeyword, synIdent, synString, synProp, synPunct, synStatus, synJsxTag, synText,
-  ideWinBar, ideWinFile, ideWinBtn, ideWinClose,
+  primaryBtn,
+  secondaryBtn,
+  gradientText,
+  synKeyword,
+  synIdent,
+  synString,
+  synProp,
+  synPunct,
+  synStatus,
+  synJsxTag,
+  synText,
+  ideWinBar,
+  ideWinFile,
+  ideWinBtn,
+  ideWinClose,
 } from "../ui/preBuildStyle";
 
 const ROLES = [
@@ -37,7 +49,10 @@ function Typewriter() {
     }
 
     const t = setTimeout(
-      () => setText(deleting ? text.slice(0, -1) : target.slice(0, text.length + 1)),
+      () =>
+        setText(
+          deleting ? text.slice(0, -1) : target.slice(0, text.length + 1),
+        ),
       deleting ? 35 : 75,
     );
     return () => clearTimeout(t);
@@ -62,23 +77,32 @@ export default function ProfileSection() {
       <GridMatrixBg />
 
       <div className="max-w-[1200px] mx-auto w-full relative z-10">
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-5 gap-4 items-start">
-
+        <div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-5 gap-4 items-start"
+        >
           {/* ── Left 2: Hello text ── */}
-          <div className={cx(
-            "md:col-span-2 flex flex-col gap-3 justify-center py-2 transition-all duration-700",
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[28px]",
-          )}>
+          <div
+            className={cx(
+              "md:col-span-2 flex flex-col gap-3 justify-center py-2 transition-all duration-700",
+              visible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-[28px]",
+            )}
+          >
             <p className="font-mono text-xs text-indigo-7 dark:text-indigo-4 tracking-widest">
               {"// hello.tsx"}
             </p>
 
-            <span className="font-mono text-sm text-slate-6 dark:text-slate-6">Hi, I'm —</span>
+            <span className="font-mono text-sm text-slate-6 dark:text-slate-6">
+              Hi, I'm —
+            </span>
 
             <h1
               className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-none"
               style={{
-                background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%)",
+                background:
+                  "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -88,7 +112,9 @@ export default function ProfileSection() {
             </h1>
 
             <p className="font-mono text-base text-slate-7 dark:text-slate-4">
-              {"< "}<Typewriter />{" />"}
+              {"< "}
+              <Typewriter />
+              {" />"}
             </p>
 
             <p className="text-sm text-slate-7 dark:text-slate-5 leading-relaxed">
@@ -97,13 +123,21 @@ export default function ProfileSection() {
 
             <div className="flex flex-wrap gap-2 mt-1">
               <button
-                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
                 className={primaryBtn}
               >
                 Hire Me
               </button>
               <button
-                onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  document
+                    .getElementById("projects")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
                 className={secondaryBtn}
               >
                 View Projects
@@ -112,13 +146,19 @@ export default function ProfileSection() {
           </div>
 
           {/* ── Right 3: Terminal card — spans cols 3–5 and both rows ── */}
-          <div className={cx(
-            "md:col-span-3 md:row-span-2 transition-all duration-700 delay-150",
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[28px]",
-          )}>
+          <div
+            className={cx(
+              "md:col-span-3 md:row-span-2 transition-all duration-700 delay-150",
+              visible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-[28px]",
+            )}
+          >
             <GlassCard className="overflow-hidden">
               <div className={ideWinBar}>
-                <span className={ideWinFile}>~/portfolio/sem-sakadanupol.tsx</span>
+                <span className={ideWinFile}>
+                  ~/portfolio/sem-sakadanupol.tsx
+                </span>
                 <div className="flex items-stretch flex-shrink-0">
                   <span className={ideWinBtn}>─</span>
                   <span className={ideWinBtn}>□</span>
@@ -151,12 +191,14 @@ export default function ProfileSection() {
                     <span className={synPunct}>(</span>
                     <span className={synString}>"available"</span>
                     <span className={synPunct}>)</span>
-                    <span className={cx(synStatus, "animate-pulse ml-3")}>●</span>
+                    <span className={cx(synStatus, "animate-pulse ml-3")}>
+                      ●
+                    </span>
                   </p>
 
                   <p className="mt-2">
                     <span className={synKeyword}>return </span>
-                    <span className={synPunct}>(</span>
+                    <span className={synPunct}>{"("}</span>
                   </p>
 
                   <div className="pl-6 space-y-0.5">
@@ -167,53 +209,67 @@ export default function ProfileSection() {
                     <div className="pl-4 text-xs space-y-0.5">
                       <p>
                         <span className={synProp}>role</span>
-                        <span className={synPunct}>{"=\""}</span>
+                        <span className={synPunct}>{'="'}</span>
                         <span className={synString}>{personal.role}</span>
-                        <span className={synPunct}>{"\""}</span>
+                        <span className={synPunct}>{'"'}</span>
                       </p>
                       <p>
                         <span className={synProp}>location</span>
-                        <span className={synPunct}>{"=\""}</span>
+                        <span className={synPunct}>{'="'}</span>
                         <span className={synString}>{personal.location}</span>
-                        <span className={synPunct}>{"\""}</span>
+                        <span className={synPunct}>{'"'}</span>
                       </p>
                       <p>
                         <span className={synProp}>passion</span>
-                        <span className={synPunct}>{"=\""}</span>
+                        <span className={synPunct}>{'="'}</span>
                         <span className={synString}>design × engineering</span>
-                        <span className={synPunct}>{"\""}</span>
+                        <span className={synPunct}>{'"'}</span>
                       </p>
                       <p>
                         <span className={synProp}>status</span>
                         <span className={synPunct}>{"={"}</span>
-                        <span className={synText}>status</span>
+                        <span className={synText}>{personal.status}</span>
                         <span className={synPunct}>{"}"}</span>
                       </p>
                     </div>
-                    <p><span className={synPunct}>{"/>"}</span></p>
+                    <p>
+                      <span className={synPunct}>{"/>"}</span>
+                    </p>
                   </div>
 
-                  <p><span className={synPunct}>{")"}</span></p>
+                  <p>
+                    <span className={synPunct}>{")"}</span>
+                  </p>
                 </div>
 
-                <p><span className={synPunct}>{"}"}</span></p>
+                <p>
+                  <span className={synPunct}>{"}"}</span>
+                </p>
               </div>
             </GlassCard>
           </div>
 
           {/* ── Left 2 row 2: Social card — auto-placed under hello text ── */}
-          <div className={cx(
-            "md:col-span-2 transition-all duration-700 delay-300",
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[28px]",
-          )}>
+          <div
+            className={cx(
+              "md:col-span-2 transition-all duration-700 delay-300",
+              visible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-[28px]",
+            )}
+          >
             <GlassCard className="p-5">
               <div className="flex items-center gap-3 mb-4">
                 <div className="size-11 rounded-xl bg-gradient-to-br from-indigo-5 to-violet-7 flex items-center justify-center text-base font-black text-white shadow-lg flex-shrink-0">
                   {personal.initials}
                 </div>
                 <div>
-                  <p className="font-bold text-slate-9 dark:text-slate-1 text-sm">{personal.name}</p>
-                  <p className="text-xs font-mono text-slate-6 dark:text-slate-6">{personal.location}</p>
+                  <p className="font-bold text-slate-9 dark:text-slate-1 text-sm">
+                    {personal.name}
+                  </p>
+                  <p className="text-xs font-mono text-slate-6 dark:text-slate-6">
+                    {personal.location}
+                  </p>
                 </div>
               </div>
 
@@ -239,14 +295,22 @@ export default function ProfileSection() {
               <div className="grid grid-cols-3 gap-2 pt-3 border-t border-slate-2 dark:border-white/10">
                 {personal.stats.map(({ label, value }) => (
                   <div key={label} className="text-center">
-                    <p className={cx("text-base sm:text-lg font-black", gradientText)}>{value}</p>
-                    <p className="text-xs text-slate-6 dark:text-slate-6 mt-0.5 font-mono leading-tight">{label}</p>
+                    <p
+                      className={cx(
+                        "text-base sm:text-lg font-black",
+                        gradientText,
+                      )}
+                    >
+                      {value}
+                    </p>
+                    <p className="text-xs text-slate-6 dark:text-slate-6 mt-0.5 font-mono leading-tight">
+                      {label}
+                    </p>
                   </div>
                 ))}
               </div>
             </GlassCard>
           </div>
-
         </div>
       </div>
     </section>
