@@ -1,0 +1,34 @@
+{
+  "name": "kbach-react",
+  "homepage": "https://semsakadanupol.github.io/portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build/client"
+  },
+  "dependencies": {
+    "@kbach/react": "^0.5.51",
+    "@react-router/node": "8.0.0",
+    "@react-router/serve": "8.0.0",
+    "isbot": "^5.1.36",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-icons": "^5.6.0",
+    "react-router": "8.0.0"
+  },
+  "devDependencies": {
+    "@react-router/dev": "8.0.0",
+    "@types/node": "^22",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "gh-pages": "^6.3.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.3"
+  }
+}
