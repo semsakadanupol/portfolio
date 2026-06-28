@@ -228,7 +228,7 @@ export default function ProfileSection() {
                       <p>
                         <span className={synProp}>status</span>
                         <span className={synPunct}>{"={"}</span>
-                        <span className={synText}>{personal.status}</span>
+                        <span className={synText}>status</span>
                         <span className={synPunct}>{"}"}</span>
                       </p>
                     </div>
