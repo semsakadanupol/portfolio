@@ -13,7 +13,7 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Styling",
     varName: "styling",
-    items: ["Tailwind CSS", "CSS / SCSS", "Framer Motion", "Figma"],
+    items: ["Tailwind CSS", "CSS / SCSS", "Kbach"],
   },
   {
     label: "Tooling",

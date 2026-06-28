@@ -12,8 +12,8 @@ export const personal = {
     linkedin: "https://www.linkedin.com/in/sakadanupol-sem-a6b69441a/",
   },
   stats: [
-    { label: "Years Exp.", value: "3+" },
-    { label: "Shipped", value: "15+" },
-    { label: "Clients", value: "10+" },
+    { label: "Years Exp.", value: "1+" },
+    { label: "Shipped", value: "1+" },
+    { label: "Clients", value: "1+" },
   ],
 };
