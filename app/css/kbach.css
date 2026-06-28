@@ -64,6 +64,9 @@ table { border-collapse: collapse; border-spacing: 0; }
 .fixed { position: fixed !important }
 .top-0 { top: 0 }
 .z-50 { z-index: 50 }
+.absolute { position: absolute }
+.inset-x-0 { left: 0; right: 0 }
+.top-full { top: 100% }
 .hidden { display: none }
 .grid-cols-3 { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) }
 .flex-wrap { flex-wrap: wrap }
@@ -71,7 +74,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 .justify-between { justify-content: space-between }
 .relative { position: relative }
 .z-10 { z-index: 10 }
-.absolute { position: absolute }
 .top-4 { top: 16px }
 .right-8 { right: 32px }
 .inline-flex { display: inline-flex }
@@ -89,6 +91,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 .max-w-\[1200px\] { max-width: 1200px }
 .w-full { width: 100% }
 .h-\[56px\] { height: 56px }
+.h-10 { height: 40px }
 .h-0\.5 { height: 2px }
 .w-12 { width: 48px }
 .flex-1 { flex: 1 }
@@ -196,7 +199,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-from, transparent), var(--tw-gradient-stops, transparent)) }
 .bg-clip-text { background-clip: text; -webkit-background-clip: text }
 .text-transparent { color: transparent }
-.bg-white\/80 { background-color: rgba(255,255,255,0.8) }
+.bg-indigo-1\/50 { background-color: rgba(238,242,255,0.5) }
+.bg-gradient-to-b { background-image: linear-gradient(to bottom, var(--tw-gradient-from, transparent), var(--tw-gradient-stops, transparent)) }
 .bg-indigo-5\/10 { background-color: rgba(129,140,248,0.1) }
 .text-slate-7 { color: var(--color-slate-7) }
 .hover\:bg-slate-2:hover { background-color: var(--color-slate-2) }
@@ -229,6 +233,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 .bg-white\/50 { background-color: rgba(255,255,255,0.5) }
 .hover\:bg-slate-1:hover { background-color: var(--color-slate-1) }
 .bg-\[\#f8f8f8\] { background-color: #f8f8f8 }
+.bg-white\/80 { background-color: rgba(255,255,255,0.8) }
 .bg-indigo-6\/90 { background-color: rgba(99,102,241,0.9) }
 .bg-slate-1\/90 { background-color: rgba(248,250,252,0.9) }
 .bg-slate-1 { background-color: var(--color-slate-1) }
@@ -283,6 +288,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 .cursor-pointer { cursor: pointer }
 .transition-colors { transition: color 150ms, background-color 150ms, border-color 150ms }
 .duration-500 { transition-duration: 500ms }
+.pointer-events-none { pointer-events: none }
+.transition-opacity { transition: opacity 150ms }
 .duration-200 { transition-duration: 200ms }
 .translate-y-\[24px\] { transform: translateY(24px) }
 .delay-100 { transition-delay: 100ms }
@@ -291,7 +298,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 .delay-150 { transition-delay: 150ms }
 .delay-300 { transition-delay: 300ms }
 .select-none { user-select: none }
-.pointer-events-none { pointer-events: none }
 .blur-3xl { --tw-blur: blur(64px); filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,) }
 .cursor-grabbing { cursor: grabbing }
 .cursor-grab { cursor: grab }
@@ -306,10 +312,11 @@ table { border-collapse: collapse; border-spacing: 0; }
 .to-violet-6 { --tw-gradient-to: var(--color-violet-6) }
 .-translate-y-3 { transform: translateY(-12) }
 .backdrop-blur-md { --tw-backdrop-blur: blur(12px); backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,) }
+.from-white\/50 { --tw-gradient-from: rgba(255,255,255,0.5); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) }
+.to-transparent { --tw-gradient-to: transparent }
 .from-indigo-5 { --tw-gradient-from: var(--color-indigo-5); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) }
 .to-violet-7 { --tw-gradient-to: var(--color-violet-7) }
 .from-indigo-6\/15 { --tw-gradient-from: rgba(99,102,241,0.15); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) }
-.to-transparent { --tw-gradient-to: transparent }
 .will-change-transform { will-change: transform }
 .backdrop-blur-sm { --tw-backdrop-blur: blur(4px); backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,) }
 .placeholder\:text-slate-5::placeholder { color: var(--color-slate-5) }
@@ -323,8 +330,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 [data-theme="dark"] .dark\:text-slate-5 { color: var(--color-slate-5) }
 [data-theme="dark"] .dark\:hover\:text-indigo-4:hover { color: var(--color-indigo-4) }
 [data-theme="dark"] .dark\:text-slate-6 { color: var(--color-slate-6) }
-[data-theme="dark"] .dark\:border-white\/5 { border-color: rgba(255,255,255,0.05) }
-[data-theme="dark"] .dark\:bg-slate-12\/80 { background-color: rgba(1,2,10,0.8) }
+[data-theme="dark"] .dark\:bg-indigo-12\/50 { background-color: rgba(18,16,45,0.5) }
+[data-theme="dark"] .dark\:from-slate-12\/50 { --tw-gradient-from: rgba(1,2,10,0.5); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) }
 [data-theme="dark"] .dark\:bg-indigo-5\/12 { background-color: rgba(129,140,248,0.12) }
 [data-theme="dark"] .dark\:hover\:bg-white\/5:hover { background-color: rgba(255,255,255,0.05) }
 [data-theme="dark"] .dark\:text-indigo-5 { color: var(--color-indigo-5) }
@@ -369,6 +376,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 [data-theme="dark"] .dark\:border-white\/8 { border-color: rgba(255,255,255,0.08) }
 [data-theme="dark"] .dark\:hover\:border-white\/15:hover { border-color: rgba(255,255,255,0.15) }
 [data-theme="dark"] .dark\:bg-white\/10 { background-color: rgba(255,255,255,0.1) }
+[data-theme="dark"] .dark\:border-white\/5 { border-color: rgba(255,255,255,0.05) }
 
 /* Responsive */
 @media (min-width: 576px) { .sm\:grid-cols-\[1fr_auto\] { display: grid !important; grid-template-columns: 1fr auto } }

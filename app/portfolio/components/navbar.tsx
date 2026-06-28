@@ -5,9 +5,9 @@ import { personal } from "../data/personal";
 import { useMotion } from "../hooks/useMotion";
 
 const NAV_LINKS = [
-  { label: "about.tsx",    id: "about" },
+  { label: "about.tsx", id: "about" },
   { label: "projects.tsx", id: "projects" },
-  { label: "contact.tsx",  id: "contact" },
+  { label: "contact.tsx", id: "contact" },
 ];
 
 function scrollTo(id: string) {
@@ -31,7 +31,10 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!motionEnabled) { setNavLoaded(true); return; }
+    if (!motionEnabled) {
+      setNavLoaded(true);
+      return;
+    }
     const t = setTimeout(() => setNavLoaded(true), 60);
     return () => clearTimeout(t);
   }, [motionEnabled]);
@@ -52,10 +55,18 @@ export default function Navbar() {
         "fixed top-0 z-50 w-full h-[56px] flex items-center border-b transition-all duration-500",
         navLoaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3",
         scrolled
-          ? "border-slate-2 dark:border-white/5 bg-white/80 dark:bg-slate-12/80 backdrop-blur-md"
+          ? "border-transparent bg-indigo-1/50 dark:bg-indigo-12/50 backdrop-blur-md shadow-none"
           : "border-transparent bg-transparent",
       )}
     >
+      {/* Gradient fade that blends navbar into page content */}
+      <div
+        className={cx(
+          "absolute inset-x-0 top-full h-10 pointer-events-none transition-opacity duration-500",
+          scrolled ? "opacity-100" : "opacity-0",
+          "bg-gradient-to-b from-white/50 dark:from-slate-12/50 to-transparent",
+        )}
+      />
       <div className={container}>
         {/* Logo */}
         <button
