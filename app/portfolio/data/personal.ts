@@ -8,8 +8,8 @@ export const personal = {
   email: "semsakadanupol@gmail.com",
   status: "available" as const,
   social: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
+    github: "https://github.com/semsakadanupol",
+    linkedin: "https://www.linkedin.com/in/sakadanupol-sem-a6b69441a/",
   },
   stats: [
     { label: "Years Exp.", value: "3+" },
