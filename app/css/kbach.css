@@ -71,6 +71,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 .grid-cols-3 { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) }
 .flex-wrap { flex-wrap: wrap }
 .items-baseline { align-items: baseline }
+.flex-row { flex-direction: row }
 .justify-between { justify-content: space-between }
 .relative { position: relative }
 .z-10 { z-index: 10 }
@@ -82,7 +83,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 .inset-0 { top: 0; right: 0; bottom: 0; left: 0 }
 .z-\[9999\] { z-index: 9999 }
 .left-0 { left: 0 }
-.flex-row { flex-direction: row }
 .block { display: block }
 .z-\[100\] { z-index: 100 }
 
@@ -148,7 +148,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 .mb-4 { margin-bottom: 16px }
 .space-y-1\.5 { row-gap: 6px }
 .pt-5 { padding-top: 20px }
-.ml-auto { margin-left: auto }
 .py-20 { padding-top: 80px; padding-bottom: 80px }
 .mt-1 { margin-top: 4px }
 .mb-5 { margin-bottom: 20px }
@@ -386,7 +385,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 @media (min-width: 768px) { .md\:text-3xl { font-size: 30px } }
 @media (min-width: 768px) { .md\:row-span-2 { grid-row: span 2 / span 2 } }
 @media (min-width: 768px) { .md\:grid-cols-2 { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) } }
-@media (min-width: 768px) { .md\:grid-cols-\[1fr_1px_280px\] { display: grid !important; grid-template-columns: 1fr 1px 280px } }
+@media (min-width: 768px) { .md\:grid-cols-\[1fr_1px_380px\] { display: grid !important; grid-template-columns: 1fr 1px 380px } }
 @media (min-width: 768px) { .md\:border-t-0 { border-top-width: 0 } }
 @media (min-width: 768px) { .md\:grid-cols-5 { display: grid !important; grid-template-columns: repeat(5, minmax(0, 1fr)) } }
 @media (min-width: 576px) { .sm\:text-4xl { font-size: 36px } }
