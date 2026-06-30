@@ -9,7 +9,7 @@ export const personal = {
   status: "available" as const,
   social: {
     github: "https://github.com/semsakadanupol",
-    linkedin: "https://www.linkedin.com/in/sakadanupol-sem-a6b69441a/",
+    linkedin: "https://www.linkedin.com/in/sakadanupol-sem/",
   },
   stats: [
     { label: "Years Exp.", value: "1+" },
